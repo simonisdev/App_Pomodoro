@@ -35,11 +35,12 @@ function createTask(value){
 function renderTasks(){
     const html = tasks.map(task => {
         return `
-            <div class="task">
-                <div class="competed">${task.completed ? `<span class="done">Done</span>` : `<button class="start-button" data-id="${task.id}">Start</button>`}</div>
-                <div class="title">${task.title}</div>
-            </div>
+        <div class="task">
+        <div class="competed">${task.completed ? `<span class="done">Done</span>` : `<button class="start-button" data-id="${task.id}">Start</button>`}</div>
+        <div class="title">${task.title}</div>
+        </div>
         `;
+        // alert("tiempo terminado");
     });
 
     const tasksContanier = document.querySelector('#tasks');
@@ -59,8 +60,8 @@ function renderTasks(){
 }
 
 function startButtonHandler(id){
-    // time = 25 * 60;
-    time = 5;
+    time = 25 * 60;
+    // time = 5;
     current = id;
     const taskIndex = tasks.findIndex( task => task.id === id);
     taskName.textContent = tasks[taskIndex].title;
@@ -84,8 +85,8 @@ function timeHandler(id){
 }
 
 function startBreak() {
-    // time = 5 * 60;
-    time = 3;
+    time = 5 * 60;
+    // time = 3;
     taskName.textContent = 'Break';
     renderTime();
     timerBreak = setInterval(() => {
@@ -111,7 +112,6 @@ function renderTime() {
     const minutes = parseInt(time / 60);
     const seconds = parseInt(time % 60);
 
-    // minutos:segundos -> 00:00
     timeDiv.textContent = `${minutes < 10 ? "0": ""}${minutes}:${seconds < 10 ? "0": ""}${seconds}`;
 }
 

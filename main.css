@@ -1,6 +1,16 @@
 body {
     font-family: Arial, Helvetica, sans-serif;
-    background-color: purple;
+    background-color:crimson;
+}
+
+.title--principal {
+    color: white;
+    text-align: center;
+    text-decoration: none;
+}
+.title--principal a {
+    text-decoration: none;
+color: rgba(255, 255, 25, 0.6);
 }
 
 #app {
@@ -33,7 +43,8 @@ input[type="text"] {
 button,
 input[type="submit"] {
     border: none;
-    background-color: #003366;
+    /* background-color: #003366; */
+    background-color: olivedrab;
     color: white;
     padding: 10px;
     border-radius: 5px;
