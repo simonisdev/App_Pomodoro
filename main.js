@@ -59,8 +59,8 @@ function renderTasks(){
 }
 
 function startButtonHandler(id){
-    // time = 25 * 60;
-    time = 3;
+    time = 25 * 60;
+    // time = 5;
     current = id;
     const taskIndex = tasks.findIndex( task => task.id === id);
     taskName.textContent = tasks[taskIndex].title;
@@ -84,21 +84,10 @@ function timeHandler(id){
         startBreak();
     }
 }
-// function timeHandler(id) {
-//     if (time === 0) {
-//         clearInterval(timer);
-//         const endSound = document.querySelector('#timerSound');
-//         endSound.play();
-//     } else {
-//         time--;
-//         renderTime();
-//     }
-// }
-
 
 function startBreak() {
-    // time = 5 * 60;
-    time = 5;
+    time = 5 * 60;
+    // time = 5;
     taskName.textContent = 'Break';
     renderTime();
     timerBreak = setInterval(() => {
