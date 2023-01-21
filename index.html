@@ -8,24 +8,41 @@
     <link rel="stylesheet" href="./main.css">
 </head>
 <body>
-    <h1 class="title--principal" ><a href="https://es.wikipedia.org/wiki/T%C3%A9cnica_Pomodoro" target="_blank">TÉCNICA POMODORO</a></h1>
-    <div id="app">
+
+    <h1 class="title--principal" >
+        <a href="https://es.wikipedia.org/wiki/T%C3%A9cnica_Pomodoro" target="_blank">TÉCNICA POMODORO</a>
+    </h1>
+    
+    <div class="main__container" id="app">
         <div id="time">
             <div id="value"></div>
             <div id="taskName"></div>
         </div>
 
         <div class="tasks-container">
-            <div class="form">
-                <form action="" id="form">
+            <div class="form__container">
+                <form class="form" action="" id="form">
                     <input type="text" id="itTask">
                     <input type="submit" id="bAdd" value="Agregar Tarea">
                 </form>
             </div>
-            <div id="tasks">
-                
-            </div>
+
+            <div id="tasks"></div>
+            
+        <audio id="timerSound" src="./sounds/beep.wav"></audio>
+
         </div>
+        <div class="clear__list">
+            <button onclick="location.reload()">Borrar lista</button>
+        </div>
+    </div>
+
+    <div class="information">
+        <article class="article-one">
+            <a href="https://www.educacionchile.cl/que-es-la-tecnica-pomodoro-y-como-puede-ayudar-a-mejorar-el-enfoque-de-los-alumnos/?gclid=Cj0KCQjwkOqZBhDNARIsAACsbfLvZlN1cqgqH5HDfHIPtZwkFruhTLoPxfkLxzP_7RYJYbEacFJhptYaAr6AEALw_wcB" target="_blank">
+                ¿Qué es la Técnica Pomodoro y cómo puede ayudar el enfoque de los alumnos?
+            </a>
+        </article>
     </div>
     <script src="./main.js"></script>
 </body>

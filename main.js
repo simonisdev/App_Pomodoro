@@ -36,10 +36,9 @@ function renderTasks(){
     const html = tasks.map(task => {
         return `
         <div class="task">
-        <div class="competed">${task.completed ? `<span class="done">Done</span>` : `<button class="start-button" data-id="${task.id}">Start</button>`}</div>
+        <div class="competed">${task.completed ? `<span class="done">Terminada</span>` : `<button class="start-button" data-id="${task.id}">Iniciar</button>`}</div>
         <div class="title">${task.title}</div>
-        </div>
-        `;
+        </div>`;
         // alert("tiempo terminado");
     });
 
@@ -53,15 +52,15 @@ function renderTasks(){
             if(!timer){
                 const id = button.getAttribute('data-id');
                 startButtonHandler(id);
-                button.textContent = 'In progress ...'
+                button.textContent = 'En progreso ...'
             }
         });
     })
 }
 
 function startButtonHandler(id){
-    time = 25 * 60;
-    // time = 5;
+    // time = 25 * 60;
+    time = 3;
     current = id;
     const taskIndex = tasks.findIndex( task => task.id === id);
     taskName.textContent = tasks[taskIndex].title;
@@ -77,16 +76,29 @@ function timeHandler(id){
 
     if(time === 0){
         clearInterval(timer);
+        const endSound = document.querySelector('#timerSound');  //sound
+        endSound.play(); //sound
         timer = null;
         markCompleted(id);
         renderTasks();
         startBreak();
     }
 }
+// function timeHandler(id) {
+//     if (time === 0) {
+//         clearInterval(timer);
+//         const endSound = document.querySelector('#timerSound');
+//         endSound.play();
+//     } else {
+//         time--;
+//         renderTime();
+//     }
+// }
+
 
 function startBreak() {
-    time = 5 * 60;
-    // time = 3;
+    // time = 5 * 60;
+    time = 5;
     taskName.textContent = 'Break';
     renderTime();
     timerBreak = setInterval(() => {
@@ -100,6 +112,8 @@ function timerBreakHandler() {
 
     if (time === 0) {
         clearInterval(timerBreak);
+        const endSound = document.querySelector('#timerSound');  //sound
+        endSound.play(); //sound
         current = null;
         timerBreak = null;
         taskName.textContent = '';
